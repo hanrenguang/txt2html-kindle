@@ -115,6 +115,9 @@ function txt2html(configs, chapterList, contentList) {
  */
 function run() {
   console.log('=================== 开始转换 ==================');
+  if (!fs.existsSync('kindleBook')) {
+    fs.mkdirSync('kindleBook');
+  }
   // 获取配置项
   const configs = readConfig();
   // 判断是否需要解码

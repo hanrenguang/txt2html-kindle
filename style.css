@@ -1,0 +1,17 @@
+/* 段落样式 */
+p {
+  margin-top: 1em;
+  text-indent: 1.5em;
+}
+
+/* 章节标题样式 */
+h2 {
+  margin: 2em 0 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* 分页标签样式 */
+.pagebreak {
+  page-break-before: always;
+}

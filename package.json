@@ -1,0 +1,26 @@
+{
+  "name": "txt2html-kindle",
+  "version": "1.0.0",
+  "description": "txt2html for kindle",
+  "main": "convert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanrenguang/txt2html-kindle.git"
+  },
+  "keywords": [
+    "kindle",
+    "txt2html"
+  ],
+  "author": "Renguang Han",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanrenguang/txt2html-kindle/issues"
+  },
+  "homepage": "https://github.com/hanrenguang/txt2html-kindle#readme",
+  "dependencies": {
+    "iconv-lite": "^0.5.1"
+  }
+}

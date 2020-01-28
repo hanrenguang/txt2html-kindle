@@ -105,9 +105,25 @@ function txt2html(configs, chapterList, contentList) {
 </html>
   `;
 
-  const outputFilePath = path.join(__dirname, target);
+  const outputFilePath = path.join(__dirname, './kindleBooks', target);
   fs.writeFileSync(outputFilePath, html);
   console.log('=================== HTML 文件生成结束 ==================');
+}
+
+
+/**
+ * 清理临时文件
+ * @param {Object} configs 配置项
+ */
+function clearTemp(configs) {
+  const file = `${configs.title}temp.txt`;
+  // 检查当前目录中是否存在该文件
+  fs.access(file, fs.constants.F_OK, (err) => {
+    if (!err) { // 存在
+      // 删除该文件
+      fs.unlinkSync(file);
+    }
+  });
 }
 
 /**
@@ -115,18 +131,17 @@ function txt2html(configs, chapterList, contentList) {
  */
 function run() {
   console.log('=================== 开始转换 ==================');
-  if (!fs.existsSync('kindleBook')) {
-    fs.mkdirSync('kindleBook');
+  if (!fs.existsSync('kindleBooks')) {
+    fs.mkdirSync('kindleBooks');
   }
   // 获取配置项
   const configs = readConfig();
-  // 判断是否需要解码
-  const { sourceEncodeType } = configs;
-  if (sourceEncodeType !== 'utf-8') {
-    decodeFile(configs);
-  }
+  // 输出临时文件，编码为 utf-8
+  decodeFile(configs);
   // 转换
   txtParse(configs, txt2html);
+  // 清理不必要的临时资源
+  clearTemp(configs);
   console.log('=================== 转换结束 ==================');
 }
 

@@ -4,5 +4,5 @@
   "coverRequest": "./cover.png",
   "sourceEncodeType": "gbk",
   "chapterReg": "^第.+章",
-  "target": "./kindleBook/书名.html"
+  "target": "书名.html"
 }

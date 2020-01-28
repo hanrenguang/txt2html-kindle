@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
 const iconvLite = require('iconv-lite');
@@ -8,9 +8,8 @@ const iconvLite = require('iconv-lite');
  */
 function readConfig() {
   const configReq = path.join(__dirname, 'config.json');
-  let configs = fs.readFileSync(configReq);
-  configs = JSON.parse(configs);
-  return configs;
+  const configs = fs.readFileSync(configReq);
+  return JSON.parse(configs);
 }
 
 /**
@@ -41,14 +40,12 @@ function txtParse(configs, callback) {
   const chapterList = [];
   const contentList = [];
 
-  const rl = readline.createInterface({
-    input: input
-  });
+  const readLine = readline.createInterface({ input });
 
   console.log('=================== 开始文件读取 ==================');
 
   let chapterContent = [];
-  rl.on('line', (line) => {
+  readLine.on('line', (line) => {
     if (chapterRegObj.test(line)) {
       chapterList.push(line);
       if (chapterList.length > 1 && chapterContent.length) {
@@ -62,7 +59,7 @@ function txtParse(configs, callback) {
     }
   });
 
-  rl.on('close', () => {
+  readLine.on('close', () => {
     chapterContent.length && contentList.push(chapterContent);
     console.log('=================== 文件读取结束 ==================');
     callback(configs, chapterList, contentList);
@@ -93,6 +90,7 @@ function txt2html(configs, chapterList, contentList) {
   </head>
   <body>
   `;
+
   for (let i = 0; i < chapterList.length; i++) {
     html += `<h2>${chapterList[i].trim()}</h2>`
     contentList[i].forEach(item => {
@@ -100,6 +98,7 @@ function txt2html(configs, chapterList, contentList) {
     });
     html += '<div class="pagebreak"></div>';
   }
+
   html += `
   </body>
 </html>

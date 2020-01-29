@@ -62,6 +62,7 @@ function txtParse(configs, callback) {
   readLine.on('close', () => {
     chapterContent.length && contentList.push(chapterContent);
     console.log('=================== 文件读取结束 ==================');
+    console.log(`识别章节数 ------> ${chapterList.length}`);
     callback(configs, chapterList, contentList);
   });
 }

@@ -1,6 +1,6 @@
 {
   "name": "txt2html-kindle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "txt2html for kindle",
   "main": "convert.js",
   "scripts": {

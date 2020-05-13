@@ -17,7 +17,7 @@
 ## 使用
 1. `clone` 本项目到本地，进入项目目录，执行以下命令：
 ```bash
-npm install
+$ npm install
 ```
 2. 查看并修改项目根目录的 `config.json` 文件：
 ```Json
@@ -36,11 +36,12 @@ npm install
 ```
 3. 执行脚本进行转换：
 ```bash
-node convert.js
+$ npm run conv
+// node convert.js
 ```
 4. 转换结束后，进入输出 `HTML` 文件目录（`kindleBooks`），在命令行执行：
 ```bash
-kindlegen 书名.html
+$ kindlegen 书名.html
 ```
 5. 等待 `kindlegen` 处理结束，会在当前目录生成 `kindle` 支持的 `.mobi` 后缀文件，导入你的 `kindle` 即可。
 

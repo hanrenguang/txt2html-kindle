@@ -19,20 +19,20 @@
 ```bash
 $ npm install
 ```
-2. 查看并修改项目根目录的 `config.json` 文件：
-```Json
+2. 查看并修改项目根目录的 `config.js` 文件：
+```JavaScript
 # 书名
-"title": "书名"
+title: '书名'
 # 源文件相对路径
-"sourceRequest": "./书名.txt"
+sourceRequest: './书名.txt'
 # 封面图片相对路径
-"coverRequest": "./cover.png"
+coverRequest: './cover.png'
 # 源文件编码
-"sourceEncodeType": "gbk"
+sourceEncodeType: 'gbk'
 # 章节标题正则，用于匹配章节标题
-"chapterReg": "^第.+章"
+chapterReg: /^第.+章/
 # 目标文件名称，用于输出生成的 HTML 文件
-"target": "书名.html"
+target: '书名.html'
 ```
 3. 执行脚本进行转换：
 ```bash

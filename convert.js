@@ -7,9 +7,8 @@ const iconvLite = require('iconv-lite');
  * 获取配置项
  */
 function readConfig() {
-  const configReq = path.join(__dirname, 'config.json');
-  const configs = fs.readFileSync(configReq);
-  return JSON.parse(configs);
+  const configs = require('./config');
+  return configs;
 }
 
 /**
